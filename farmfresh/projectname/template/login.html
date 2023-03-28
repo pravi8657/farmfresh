@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container py-5">
+    <h1>login</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{login_form.as_p}}
+        <button class="btn btn-primary" type="submit">login</button>
+    </form>
+    <P class="text-center">Don't have an account? ,<a href="/register">Create an account</a> instead.</P>
+    {% for message in messages %}
+{{message}}
+{% endfor %}
+</body>
+</html>
